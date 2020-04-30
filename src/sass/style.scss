@@ -1,0 +1,271 @@
+$mainColor: #1a1a1a;
+@font-face {
+  font-family: ubuntuBold;
+  src: url("../fonts/Ubuntu-Bold.ttf");
+}
+@font-face {
+  font-family: ubuntuRegular;
+  src: url("../fonts/Ubuntu-Regular.ttf");
+}
+
+@font-face {
+  font-family: signtureFont;
+  src: url("../fonts/amandasignature.ttf");
+}
+
+$mainFont: ubuntuRegular;
+$secondFont: ubuntuBold;
+$signtureFont: signtureFont;
+
+// start navbar
+.nav {
+  font-family: $mainFont;
+  position: fixed !important;
+  z-index: 999 !important;
+  transform: rotate(90deg) !important;
+  right: -3%;
+  top: 15%;
+  li {
+    a {
+      color: #fff !important;
+    }
+  }
+}
+
+#fp-nav{
+  ul{
+    li{
+      .fp-tooltip{
+        font-family: $mainFont !important;
+      }
+    }
+  }
+}
+
+#fp-nav ul li a span, 
+.fp-slidesNav ul li a span {
+    background: yellow !important;
+}
+
+.loader-page{
+  .spinner-loading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+// start home page
+.home-section {
+  position: relative;
+  background-color: $mainColor;
+  .home-page{
+    .font-awsome{
+      i{
+        position: absolute;
+        z-index: 2;
+        font-size: 30px;
+        animation: image-header-animation 2s ease-in-out infinite;
+        animation-play-state: paused;
+        color: #339AF0;
+      }
+      .onedrive{
+        left: 32%;
+        top: 20%;
+      }
+      .onedrive2{
+        left: 18%;
+        top: 50%;
+      }
+      .circle{
+        left: 40%;
+        top: 70%;
+      }
+      .circle2{
+        left: 68%;
+        top: 9%;
+      }
+    }
+  }
+  .signture {
+    color: #fff;
+    font-family: $signtureFont;
+    font-size: 20px;
+    position: absolute;
+    top: 3%;
+    left: 2%;
+  }
+  .header-slag {
+    text-transform: capitalize;
+    letter-spacing: 4px;
+    font-family: $mainFont;
+    position: absolute;
+    top: 3%;
+    left: 35%;
+    color: #fff;
+  }
+  .home_page_title {
+    font-family: $secondFont;
+    font-size: 250px;
+    position: absolute;
+    left: 43%;
+    letter-spacing: 10px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .home_page-paragraph {
+    font-family: $mainFont;
+    text-transform: capitalize;
+    position: absolute;
+    left: 20%;
+    top: 44%;
+    transform: rotate(270deg);
+    color: #666;
+  }
+  .patrick-title {
+    font-family: $mainFont;
+    position: absolute;
+    color: #fff;
+    font-size: 150px;
+    left: 70%;
+    top: 50%;
+    transform: translate(-70%, -50%);
+    .dot {
+      display: inline-block;
+      color: #ff4950;
+      font-size: 160px;
+    }
+  }
+  .made-by {
+    position: absolute;
+    font-family: $mainFont;
+    color: #fff;
+    bottom: 9%;
+    left: -2%;
+    transform: rotate(270deg);
+  }
+  &:hover .font-awsome i{
+    animation-play-state: initial;
+  }
+}
+
+// start weather-page
+.weather-page{
+  background-color: #26293A;
+  .content{
+    font-family: $mainFont;
+    color: #fff;
+    .wheter-slag{
+      color: #fff;
+    }
+    .city-name, .city-country{
+      font-size: 30px;
+    }
+    .city-icon{
+      width: 11%;
+    }
+    .city-temp-min, .city-temp-max{
+      margin: 10px;
+    }
+    .city-description{
+      font-size: 20px;
+      text-transform: capitalize;
+    }
+    .no-city-select{
+      font-size: 18px;
+      padding: 5px 0 20px 0;
+      text-transform: capitalize;
+    }
+  }
+}
+
+// weather-form
+.weather-form{
+  font-family: $mainFont;
+  input{
+    width: 50%;
+    padding: 5px;
+    border: 0;
+    background-color: transparent;
+    border-bottom: 1px solid #DDD;
+    font-size: 18px;
+    color: #fff;
+  }
+  button{
+    border: 0;
+    padding: 7px;
+    width: 20%;
+    background-color: #339AF0;
+    color: #fff;
+  }
+  .disapled{
+    opacity: 0.5;
+  }
+  .notdisapled{
+    opacity: 1;
+  }
+}
+
+// start animation
+@keyframes image-header-animation{
+  0%{
+    transform: translateY(-5px);
+  }
+  50%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(-5px);
+  }
+}
+
+// start media
+@media (max-width: 800px) {
+  .nav {
+    right: -5% !important;
+    top: 15%;
+  }
+  .home-section{
+    .home_page-paragraph {
+      left: 7% !important;
+      top: 46% !important;
+    }
+  }
+}
+
+@media (max-width: 524px) {
+  .nav {
+    right: -15% !important;
+    top: 19%;
+  }
+  .home-page{
+    .font-awsome{
+      i{
+        font-size: 20px !important;
+      }
+    }
+  }
+  .home-section {
+    .header-slag {
+      font-size: 14px;
+      letter-spacing: 2px !important  ;
+    }
+    .home_page_title {
+      font-size: 180px !important;
+      left: 50%;
+      letter-spacing: 0px;
+      top: 50%;
+    }
+    .home_page-paragraph {
+      left: -2% !important;
+    }
+    .patrick-title {
+      font-size: 90px !important;
+    }
+    .made-by {
+      left: -10% !important;
+    }
+  }
+}
